@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="ul1">
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+    <script>
+//        var ==> variable 可变的
+//        var a=5;
+//        console.log(aa);
+//
+//        a=5;
+//        console.log(a);
+
+//        var a = 5;
+//        function foo() {
+//            console.log(a);
+//            a=6;
+//        }
+//        foo();
+
+//        var a = 5;
+//        function foo() {
+//            console.log(a);
+//            var a=6;
+//        }
+//foo();
+
+//        console.log('1='+a);
+//        var a=5;
+//        function a() {
+//            console.log('2='+a);
+//        }
+//        a=6;
+//        console.log('3='+a);
+//        a();
+
+
+//        foo();
+//        function foo() {
+//            console.log('132');
+//        }
+
+//        var foo = function () {
+//            console.log('123');
+//        }
+//        foo();
+
+//        var a=5;
+//        function foo() {
+//            console.log(a);  //5
+//
+//            if(false){
+//                var a=6;//undefined
+//            }
+//        }
+//        foo();
+
+//        for(var i=0;i<3;i++){
+//
+//        }
+//        console.log(i);  //3,c++和java中i会报错，未定义；因为是块级作用域
+
+//        var a=5;
+//        var a=6;
+//        console.log(a); //6
+
+//
+//            if(true){
+//                var a=5;
+//            }
+//            console.log(a);
+
+
+//        以上为var的一系列不好
+
+//        let a = 5;
+//        function foo() {
+//            console.log(a);
+//            let a=6;
+//        }
+//        foo();
+
+//        console.log(a);
+//        let a=5;
+
+//
+
+//        let a = 5;
+//        let a =6;
+//        console.log(a);
+
+
+//        let a=5;
+//        function foo() {
+//            console.log(a);
+//
+//            if(false){
+//                let a=6;
+//            }
+//        }
+//        foo();   5
+
+//        for(let i =0;i<3;i++){
+//
+//        }
+//        console.log(i);
+//
+////点击每隔li  弹出当前li的下标
+//        var oUl = document.querySelector('#ul1');
+//        var aLi = document.querySelectorAll('#ul1 li');
+////        oUl.onclick = function (e) {
+////            console.log(e.target);
+////        }
+//
+////            1.给每一个li自定义属性,只有1个i，但是赋了五次值
+//            for(var i = 0; i < aLi.length; i++) {
+//                aLi[i].index = i;
+//                aLi[i].onclick = function () {
+//                    console.log(this.index);//5      for循环速度快于function，for已将到5了，function还在等着
+//                }
+//            }
+//
+//            //2.闭包
+//            for(var i=0;i<aLi.length;i++){
+//                (function (idx) {  //形参    立即调用
+//                    aLi[idx].onclick = function () {
+//                        console.log(idx);
+//                    };
+//                })(i);//实参  一直被引用，没有被回收  变量一直被使用，不被释放，内存会泄露
+//            }
+////            GC垃圾回收  变量没有被调用就会被回收
+//
+//        //3.let  i是每一次不一样的，let可以形成一个闭包
+//            for(let i = 0; i < aLi.length; i++) {
+//                aLi[i].index = i;
+//                aLi[i].onclick = function () {
+//                        console.log(this.index);//5      for循环速度快于function，for已将到5了，function还在等着
+//                }
+//            }
+//
+//            //和var有区别，let 是一个闭包
+//            let arr = [];
+//            for(let i=0;i<5;i++){
+//                arr[i] = function () {//数组里面放function  相当于一个对象
+//                    console.log(i);
+//                }
+//            }
+//            arr[3]();
+
+
+        //闭包是有权使用另一个函数的变量  闭包小例子
+//        function a() {
+//            var num = 5;
+//            return num;
+//        }
+//        var n = a();
+//        console.log(n);
+
+//        const 表示常量
+
+//        const a=5;  //定义常量
+//        a = 6;  //不能给常量赋值了
+//        console.log(a);
+
+
+
+//        const obj = {
+//            name : 'zhangsan',
+//            age : 18,
+//        }
+//        console.log(obj);
+//        Object.freeze(obj);  //冻结
+//        obj.name = 'lisi';
+////        console.log(obj);
+////        obj = {
+////            name : 'lisi',
+////        } //相当于new Object();  又定义了一个对象
+//        console.log(obj);
+
+        const arr = [1, 2, 3, 4];
+        console.log(arr);
+        arr.push(5);
+        console.log(arr);
+
+
+
+
+
+
+    </script>
+</body>
+</html>
