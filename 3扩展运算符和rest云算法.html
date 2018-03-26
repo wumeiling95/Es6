@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>div1</div>
+<div>div2</div>
+<div>div3</div>
+<script>
+//    function foo() {
+//        console.log(arguments[0],arguments[1]);
+//    }
+//    foo(5,6,7,8);//实参多，形参少
+
+//    function foo(...arg) {
+//        console.log(arg);
+//    }
+//    foo(5,6,7,8);//实参多，形参少
+//    foo(5,6,7,8,9);//实参多，形参少
+
+//    let arr1 = [1,2];
+//    let arr2 =[3,4];
+//    let arr3 =[3,...arr1,4];
+//    console.log(arr3);
+
+
+//    let arr1=[1,2];
+//    let arr2= arr1;
+//    arr1.push(3);
+//    console.log(arr2);
+
+//let arr1=[1,2];
+//let arr2= [...arr1];
+//arr1.push(3);
+//console.log(arr1);
+//console.log(arr2);
+//
+//    let arr1=[1,2];
+//    let arr2=[3,4];
+////    let arr3 = [...arr1,...arr2];
+//    let arr3 =arr1.concat(arr2);
+//    console.log(arr3);
+
+//    let obj1 = {
+//        name:'haha'
+//    };
+//    let obj2 = {
+//        name:"jaja"
+//    };
+//    let obj3 = {...obj1,...obj2};
+//    console.log(obj3);
+
+    document.getElementsByTagName('div');//html collection
+    let aDiv = document.querySelectorAll('div');//Nodelist 数组：类数组，伪数组
+    console.log(aDiv);//类数组转变为真正的数组
+//        1.定义一个数组，循环遍历每一个aDiv，push进数组
+//        2.let arr =[...aDiv];
+            console.log(arr);
+
+
+    //childNodes只包含文本节点  children包含元素节点
+
+</script>
+</body>
+</html>
