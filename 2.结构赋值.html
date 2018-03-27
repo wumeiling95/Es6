@@ -50,7 +50,7 @@
 //            name:'zs',
 //            age:18
 //        };
-//        console.log(a,b);
+//        console.log(a,b);//报错
 
         //字符串解构
 //        let str = 'hello world';
@@ -79,11 +79,20 @@
 //        }
 //        let [a=foo()]=[1];
 
-         let json = '{"a":"hello","b":"world"}';
-//         let [a,b,c,d,e] = json;
-        let {a,b}=JSON.parse(json);
-         console.log(a,b);
+//         let json = '{"a":"hello","b":"world"}';
+////         let [a,b,c,d,e] = json;
+//        let {a,b}=JSON.parse(json);
+//         console.log(a,b);
 
+//         let a;
+//        ({a} = {a:1})//代码段不能赋值，括号就被认为是赋值语句
+//        console.log(a);
+
+        let[x=1] = [undefined];
+        console.log(x);//1
+
+        let [y=1] = [null];
+        console.log(y);//null
     </script>
 </body>
 </html>
