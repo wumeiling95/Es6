@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">div1</div>
+    <script>
+        // function foo(a='hello',b='world'){  //此处是值的产值，同理解构传值，如果不传值时，就时括号里面的值
+        //     b = b||'world';   //若b是空或者undefined或者false时，输出‘world
+        //     console.log(`${a} ${b}`);
+        // }
+        // foo(undefined,'');//空字符串是false，0是false；如果第一个参数不传，如果需要是默认值的时候，需要undefined占位
+
+
+        // function foo([a,b,c=0,d]){
+        //     console.log(a,b,c,d);
+        // }
+        // foo([1,2,3,4]);
+
+
+        // function foo({name,age=0}){
+        //     console.log(name,age);
+        // }
+        // foo({
+        //     name:'za',
+        //     age:9
+        // })   
+        // console.log(foo.length);
+
+        // function foo(a,b=1,c){
+        //     return a+b+c;
+        // }
+        // foo(5,6,6);
+        // console.log(foo.length);
+        // console.log(foo.name); 
+
+        // function foo(a,a,c){
+        //     console.log(a,a,c);
+        // }
+        // foo(5,6,7);
+        // var foo2 = function(){};
+        // console.log(foo.name);//将匿名函数赋值给匿名函数时，es5会输出空
+        // console.log(foo2.name);
+
+        // var foo3 = function foo4(){
+        //     console.log(123);
+        // }
+        // console.log(foo3.name);
+        // foo3();
+
+        // 'use strict';
+        // a=5;
+        // console.log(a);
+
+        // 'use strict';
+        // function foo(){
+        //     console.log(this);  //this指向window
+        // }
+        // foo();
+
+    //     // 'use strict';
+    //     function People(name,age){
+    //         this.name = name;
+    //         this.age = age;
+    //     }
+    //     // let p1 = new People('zs',18);
+    //     People('zs',18);
+    // //    console.log(p1);
+
+        // let a=5;
+        // let obj={
+        //     a:3
+        // };
+        // console.log(a); 
+        // with(obj){
+        //     console.log(a);
+        // }
+
+        // 阶乘
+        // 'use strict';
+        // function fac(n){
+        //     if(n==1){
+        //         return 1;
+        //     }
+        //     // return n*fac(n-1);
+        //     return n * arguments.callee(n-1);
+        // }
+        // console.log(fac(5));
+
+        //  function sum(x,y){
+        //      return x+y;
+        //  }
+        //  sun(5,6);
+
+
+        //  let sum = (x,y) => {return x+y;};
+        //  console.log(sum(5,6));
+
+        // let x = x=>x;
+
+        //不可以当做构造函数使用
+        // let People = (name,age) =>{
+        //     this.name = name;
+        //     this.age = age;
+        // };
+        // let p1 = new People('zs',18);
+    //    console.log(p1);
+
+            // let oDiv1 = document.getElementById('div1');
+            // oDiv1.addEventListener('click',function(){
+            //     console.log(this);
+            //     setTimeout(function(){
+            //         console.log(this);//window 因为是window.setTimeout
+            //     },2000);
+            // },false);  //true事件捕获，从外向里/false 事件冒泡，从里向外
+
+    //  let oDiv1 = document.getElementById('div1');
+    //         oDiv1.addEventListener('click',function(){
+    //             console.log(this);
+    //             setTimeout(()=>{
+    //                 console.log(this);//箭头函数里面是没有this的，但是有作用域链，层层向上找
+    //             },2000);
+    //         },false);  //true事件捕获，从外向里/false 事件冒泡，从里向外
+
+
+    // let a=5;
+    // let obj ={
+    //     a:6,
+    //     foo1:function(){
+    //         console.log(this.a);
+    //     },
+    //     foo2:()=>{
+    //         console.log(this.a);
+    //     }  
+    // };
+    // obj.foo1();
+    // obj.foo2();
+
+    // function foo(){
+    //     setTimeout(()=>{
+    //         console.log(this);
+    //         console.log('id:',this.id);
+    //     },100);
+    // }
+    // var id=21;
+    // foo.call({
+    //     id:42
+    // });
+
+    // function Timer(){
+    //     this.s1= 0;
+    //     this.s2 = 0;
+    //     setInterval(()=>this.s1++,1000);//this=>timer
+    //     setInterval(function(){
+    //         this.s2++;//this=>window
+    //     },1000);
+    // }
+    // var timer = new Timer();
+    // setTimeout(()=>console.log('s1:',timer.s1),3100);//3
+    // setTimeout(()=>console.log('s2:',timer.s2),3100);//0
+    
+    // let oDiv1 = document.getElementById('div1');
+    // oDiv1.addEventListener('click',()=>{
+    //     console.log(this);
+    // },false);
+
+
+        // function foo(x=0,y=0){//默认值情况下不能使用严格模式  会报错的
+        //     'use strict';
+        //     return x+y;
+        // }
+        // foo(5,6);
+
+        // function foo(...arg){
+        //     // 'use strict';
+        //     return arg[0]+arg[1];
+        // }
+        // foo(1,2); 
+
+        // function foo([x,y]){
+        //     // 'use strict';
+        //     return x+y;
+        // }
+        foo([5,6]);
+    </script>
+</body>
+</html>
