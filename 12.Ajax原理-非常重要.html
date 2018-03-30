@@ -9,6 +9,7 @@
 <body>
     <ul id="music-list"></ul>
     <script>
+        oUl = document.querySelector('ul');
         //1.创建 XMLHttpRequest 对象
         var xmlhttp;
         //解决兼容性问题
@@ -25,7 +26,7 @@
         //2.向服务器发送请求
         //get、post方法的区别
         //get ：获取  从后端获取图片，列表，发送请求，显示在url上，不安全，在请求的head里面，会产生缓存
-        //post：提交  注册界面想后端提交，看不到参数，传输的参数大小比较大，在请求的body里面
+        //post：提交  注册界面向后端提交，看不到参数，传输的参数大小比较大，在请求的body里面
     
         xmlhttp.open("GET","test1.txt",true);  //请求类型  请求的url地址  boolean（true）：async：true（异步）或 false（同步）
         xmlhttp.send();//发送
@@ -33,16 +34,23 @@
         //3.服务器响应
         xmlhttp.onreadystatechange=function(){
             if (xmlhttp.readyState==4 && xmlhttp.status==200){
-                //存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
+                //业务逻辑代码
+                // console.log(xtmlhttp.responseText);
+                let json = JSON.parse(xtmlhttp.responseText);
+                console.log(json);
+                let list = json.musicDate;
+                console.log(list);
+                for(let item of list){
+                    oUl.innerHTML += `<li>${item.tittle}</li>`;               
+            }
+        }
+    }
+    //存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
                     // 0: 请求未初始化
                     // 1: 服务器连接已建立
                     // 2: 请求已接收
                     // 3: 请求处理中
                     // 4: 请求已完成，且响应已就绪
-                 console.log(xtmlhttp.responseText);
-                 let json = JSON.parse()
-            }
-        }
     </script>
 </body>
 </html>
