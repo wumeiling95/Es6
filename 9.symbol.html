@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let obj = {
+            name :'zs',
+            age:18
+        }
+        let name = Symbol(); //保护属性
+        obj[name] = 'xx';
+        console.log(obj);
+        
+        // console.log(typeof name);
+
+        for(let p in obj){//循环遍历,证明Symbol不会出现在此循环的输出结果中
+            console.log(p,obj[p]);
+        }
+
+        //获取sybol 重复属性的xx
+        console.log(obj[name]);
+
+        let age = Symbol();
+        obj[age] = 88;
+        console.log(obj);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let obj= {
+        //     0:'sx',
+        //     true:18
+        // }
+        //  console.log(obj['0']);
+
+        // let m1 = new Map();
+        // m1.set(1,'nv');
+        // m1.set({age:18},'nn');
+        // console.log(m1);
+        // console.log(m1.get(1));
+
+        // let m1 = new Map();
+        // m1.set(1,'nv');
+        // // m1.set({age:18},'nn');
+        // // console.log(m1);
+        // // console.log(m1.get(1));
+
+        // for(let [index,item] of m1.entries()){
+        //     console.log(index,item);
+        // }   // let m1 = new Map();
+        // m1.set(1,'nv');
+        // // m1.set({age:18},'nn');
+        // // console.log(m1);
+        // // console.log(m1.get(1));
+
+        // for(let [index,item] of m1.entries()){
+        //     console.log(index,item);
+        // }
+
+        let wm = new WeakMap();
+        wm.set({},'yy');//空对象也是个对象
+        wm.set({},'zz');
+        console.log(wm);
+
+
+    </script>
+</body>
+</html>

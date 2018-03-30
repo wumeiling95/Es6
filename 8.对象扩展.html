@@ -8,13 +8,92 @@
 </head>
 <body>
     <script>
-        let mtName = 'lisi';
-        let n = 'name';
-        let obj={
-            [n]:mtName,
-            age:18
+        // let mtName = 'lisi';
+        // let n = 'name';
+        // let obj={
+        //     [n]:mtName,
+        //     age:18
+        // }
+        // console.log(obj);//属性的值可以是一个变量，requirejs也使用过
+
+        // let name = 'zhangsan';
+        // let age = 18;
+        // let n = name;
+        // let obj = {
+        //     name,
+        //     // [n],//变量名和属性简介表示法不能同时使用
+        //     age,
+        //     showName(){
+        //         console.log(this);
+        //     }
+        // }
+        // console.log(obj);
+
+        
+        // let obj1 = {
+        //     name:'zs',
+        //     ahe:18
+        // }
+        // let obj2 = {
+        //     name:'zs',
+        //     ahe:18
+        // }
+        // let obj3=obj1;
+        // console.log(obj1==obj3);
+        // console.log(obj1==obj2);//比较的是地址空间
+
+        // console.log(Object.is(+0,-0));//false
+        // console.log(Object.is(NaN,NaN));//true
+
+
+        // let obj1 = {
+        //     name:'zs',
+        //     age:18,
+        //     dad: {
+        //         name:'zss',
+        //         age:40
+        //     }
+        // }
+        // let obj2 = {
+        //     name:'ls',
+        //     school:'xx',
+        //     dad: {
+        //         name:'zss',
+        //         age:40
+        //     }
+        // }
+        // obj1.dad.age = 41;
+        // let obj3 = {...obj1,...obj2};//合并
+        // console.log(obj3);
+        
+
+        // Object.assign(obj1,obj2);//把obj2合到obj1上
+        // obj2.dad.age = 41;
+        // console.log(obj1);
+
+        let obj1 = {
+            name:'zs',
+            age:18,
+            dad: {
+                name:'zss',
+                age:40
+            }
         }
-        console.log(obj);//属性的值可以是一个变量，requirejs也使用过
+        let obj2 = {
+            name:'ls',
+            school:'xx',
+            dad: {
+                name:'zss',
+                age:40
+            }
+        }
+        let arr = [1,2,3];
+        console.log('name' in obj1);
+        console.log(2 in arr);
+
+
+
+
 
         
 
