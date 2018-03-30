@@ -7,6 +7,38 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>hhh</h1>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+        //层层回调  callback hell 
+    //     $.get('a.json',{},function(res){
+    //     console.log(res);
+    //     $.get('b.json',{},function(res){
+    //         console.log(res);
+    //         $.get('c.json',{},function(res){
+    //             console.log(res);
+    //         },'json');
+    //     },'json');
+    // },'json');
+
+    let p1 = new Promise(function(resolve,rejiect){//两个参数：成功，失败
+        $.get('a.json',{},function(res){
+            console.log(res);
+            resolve(res);});
+        }).then(function(resa){
+            console.log(resa);
+            $.get('b.json',{},function(resb){
+                console.log(resb);
+            });
+            });
+    //     }).then(function(resolve,rejiect){
+    //         $.get('c.json',{},function(res){
+    //             console.log(res);
+    //         });
+    //     })
+    // });
+    // console.log(p1);//promise对象
+
+    </script>
+    
 </body>
 </html>
