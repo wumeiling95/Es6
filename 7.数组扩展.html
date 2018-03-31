@@ -19,7 +19,7 @@
     //    }
     //    console.log(Array.from(json));
 
-    //    let aDiv = document.querySelectorAll('div');
+       let aDiv = document.querySelectorAll('div');
     //    //类数组转换成数组
     //    let arr1 =[...aDiv];
     //    console.log(arr1.constructor);//consotructor  是构造函数的意思
@@ -27,7 +27,7 @@
 
     //    let arr2 = Array.from(aDiv);
     //    console.log(arr2);
-
+    //    console.log(aDiv);
     //    let arr3 = Array.prototype.slice.call(aDiv);
     //    console.log(arr3);
 
@@ -41,7 +41,7 @@
     // console.log(arr2);
 
     // let arr3 = Array.of(3,4,5);
-    // console.log(arr3);
+    // console.log(arr3);z
 
     // let arr4 = Array.of(3,4,5,'abd','true',{name:'as'},[1,2]);
     // console.log(arr4);
@@ -50,9 +50,9 @@
         // console.log(arr.copyWithin(2,4,10));
 
         // let arr1 = [5,3,5,1,2,65,1,2,8,4,5];
-        // let result = arr1.find(function(val,key,arr){
+        // let result = arr1.find(function(val,key,arr){//值，索引，数组本身
         //     if(val>5){
-        //         return val;
+        //         return val; //跳出循环，返回值
         //     }
         // })
         // console.log(result);
@@ -75,21 +75,23 @@
 
 
         // let arr = [4,5,6,7,8,NaN];
-        // console.log(arr.indexOf(NaN));
-        // console.log(arr.includes(NaN));
+        // console.log(arr.indexOf(NaN));  
+        // console.log(arr.includes(NaN)); //返回布尔型
 
-        // let arr = [4,5,6,7,8,9];
+        let arr = [4,5,6,7,8,9];
         // for(let i=0;i<arr.length;i++){
         //     console.log(i,arr[i]);
         // }
 
+
+            // for...（属性）in...遍历对象
 
         // for(let item of arr){
         //     //可迭代的可以用for of
         //     console.log(item);
         // }
 
-        //     for(let item of arr.keys()){
+        //     for(let item of arr.keys()){//遍历索引
         //     //可迭代的可以用for of
         //     console.log(item);
         // }
@@ -105,14 +107,14 @@
             //      console.log(val,key,arr);
             // });
 
-        //     let arr1 = [4,5,6,7,8,9];
-        //    let result =  arr1.map(function(val,key,arr){               
-        //          console.log(val,key,arr);
-        //          if(val>6){
-        //         return val;
-        //          }
-        //     });
-        //     console.log(result);//map有返回值
+            let arr1 = [4,5,6,7,8,9];
+           let result =  arr1.map(function(val,key,arr){               
+                 console.log(val,key,arr);
+                 if(val>6){
+                return val;
+                 }
+            });
+            console.log(result);//map有返回值
 
             //    let arr1 = [4,5,6,7,8,9];
             // arr1.filter(function(val,key,arr){               

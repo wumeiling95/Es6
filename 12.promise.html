@@ -28,21 +28,21 @@
         //get ：获取  从后端获取图片，列表，发送请求，显示在url上，不安全，在请求的head里面，会产生缓存
         //post：提交  注册界面向后端提交，看不到参数，传输的参数大小比较大，在请求的body里面
     
-        xmlhttp.open("GET","test1.txt",true);  //请求类型  请求的url地址  boolean（true）：async：true（异步）或 false（同步）
+        xmlhttp.open("GET","musicDate.json",true);  //请求类型  请求的url地址  boolean（true）：async：true（异步）或 false（同步）
         xmlhttp.send();//发送
 
         //3.服务器响应
         xmlhttp.onreadystatechange=function(){
             if (xmlhttp.readyState==4 && xmlhttp.status==200){
                 //业务逻辑代码
-                // console.log(xtmlhttp.responseText);
-                let json = JSON.parse(xtmlhttp.responseText);
-                console.log(json);
-                let list = json.musicDate;
-                console.log(list);
-                for(let item of list){
-                    oUl.innerHTML += `<li>${item.tittle}</li>`;               
-            }
+                console.log(xmlhttp.responseText);  //内容  
+                let json = JSON.parse(xmlhttp.responseText);  //对象
+                console.log(json);  //我是B（对象）
+            //     let list = json.musicDate;
+            //     console.log(list);  //undefined
+            //     for(let ietm of list){
+            //         oUl.innerHTML += `<li>${item.tittle}</li>`;               
+            // }
         }
     }
     //存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。
