@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+
+
+        // //层层回调  callback hell 
+        // $.get('a.json',{},function(res){//回调函数相当于添加购物车依赖于用户登录，只有回调函数接受结果并添加购物车
+        //     console.log(res);
+        //     $.get('b.json',{},function(res){
+        //         console.log(res);
+        //         $.get('c.json',{},function(res){
+        //             console.log(res);
+        //         },'json');
+        //     },'json');
+        // },'json');
+
+
+    // 第一种讲法
+    // let p1 = new Promise(function(resolve,reject){//两个参数：成功，失败
+    //     $.get('a.json',{},function(res){
+    //         console.log(res);
+    //         // resolve(res);//成功调用resolve，失败调用reject
+    //         if(res.a){
+    //             resolve(res);
+    //         }else{
+    //             reject();
+    //         }
+    //         });
+    // }).then(function(resa){
+    //     // console.log(resa);
+    //     console.log("成功");
+    //     $.get('b.json',{},function(resb){
+    //             console.log(resb);
+    //     });
+    // }).catch(function(){
+    //         console.log("失败");
+    //     });
+
+    // // console.log(p1);//promise对象
+
+
+    // 补充讲法,只要需要做下一件事，必须要promise对象，最后一个不需要promise对象，对象可跟可不跟catch
+    let p1 = new Promise(function(resolve,reject){//两个参数：成功，失败
+        $.get('a.json',{},function(res){
+            console.log(res);
+            // resolve(res);//成功调用resolve，失败调用reject
+            if(res.a){
+                resolve(res);
+            }else{
+                reject();
+            }
+            });
+    }).then(function(resa){
+                new Promise(function(resolve,reject){
+                    $.get('b.json',{},function(resb){
+                    console.log(resb);
+                    resolve();
+                });
+        });
+    },function(){
+        console.log('失败');
+    }).then(function(resolve,reject){
+            $.get('c.json',{},function(res){
+                console.log(res);
+            });
+    })
+
+
+
+    
+    // let p1 = new Promise(function(resolve,reject){
+    //     setTimeout(()=>{//setTimeout也是异步的
+    //         console.log(1);
+    //         resolve();
+    //     },1000);
+    // });
+    // let p2 = new Promise(function(resolve,reject){
+    //     setTimeout(()=>{
+    //         console.log(2);
+    //         // resolve(); 
+    //         reject();           
+    //     },2000);
+    // });
+    // let p3 = new Promise(function(resolve,reject){
+    //     setTimeout(()=>{
+    //         console.log(3);
+    //         resolve();
+    //     },3000);
+    // });
+
+    // // 失败  .all全部完成在做什么事
+    // Promise.all([p1,p2,p3]).then(()=>{
+    //     console.log('over');
+    // },()=>{  //失败的另一种写法
+    //     console.log("fail");
+    // })
+    // // .catch(()=>{
+    // //     console.log("fail");//都成功是成功，一个失败即失败
+    // // })
+
+
+    // // 有一个完成就进行下一件事
+    // Promise.race([p1,p2,p3]).then(()=>{
+    //     console.log('success');
+    // },()=>{  //失败的另一种写法
+    //     console.log("++fail");
+    // })
+    </script>
+    
+</body>
+</html>

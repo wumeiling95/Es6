@@ -10,10 +10,10 @@
     <ul id="music-list"></ul>
     <script>
         oUl = document.querySelector('ul');
-        //1.创建 XMLHttpRequest 对象
-        var xmlhttp;
+        //1.创建 XMLHttpRequest 对象（创建请求对象）
+        var xmlhttp;  //定义一个变量
         //解决兼容性问题
-        if (window.XMLHttpRequest)//判断是否有XMLHttpRequest这个属性
+        if (window.XMLHttpRequest)  //判断window下面是否有XMLHttpRequest这个属性
             {
                 // code for IE7+, Firefox, Chrome, Opera, Safari
                 xmlhttp=new XMLHttpRequest();
@@ -35,14 +35,15 @@
         xmlhttp.onreadystatechange=function(){
             if (xmlhttp.readyState==4 && xmlhttp.status==200){
                 //业务逻辑代码
-                console.log(xmlhttp.responseText);  //内容  
-                let json = JSON.parse(xmlhttp.responseText);  //对象
-                console.log(json);  //我是B（对象）
-            //     let list = json.musicDate;
-            //     console.log(list);  //undefined
-            //     for(let ietm of list){
-            //         oUl.innerHTML += `<li>${item.tittle}</li>`;               
-            // }
+                // console.log(xmlhttp.responseText);  //从后端读取的json数据（字符串）  
+                let json = JSON.parse(xmlhttp.responseText);  //字符串转变为对象
+                // console.log(json);  
+                let list = json.b;
+                console.log(list);  //数组
+                //显示数组中的对象的属性
+                for(let item of list){
+                    oUl.innerHTML += `<li>${item.tittle}</li>`;  //将json数据动态插入ul中         
+            }
         }
     }
     //存有 XMLHttpRequest 的状态。从 0 到 4 发生变化。

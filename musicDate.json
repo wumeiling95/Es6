@@ -1,4 +1,9 @@
 {
-    "b":"我是B",
-    "c":"haha"
+    "b":[{
+        "tittle":"lala",
+        "na":"haha"
+    },{
+        "tittle":"yaya",
+        "na":"jaja"
+    }]
 }
