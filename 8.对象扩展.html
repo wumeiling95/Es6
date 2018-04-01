@@ -87,9 +87,26 @@
                 age:40
             }
         }
-        let arr = [1,2,3];
-        console.log('name' in obj1);
-        console.log(2 in arr);
+        let obj3 = {...obj1,...obj2};//不是完全深拷贝
+        console.log(obj3);
+        
+        // let arr = [1,2,3];
+        // console.log('name' in obj1);
+        // console.log(2 in arr);
+
+
+        // console.log(+0 === -0);
+
+        // let obj1 = {
+        //     name:"xiaohong",
+        //     age:17
+        // }
+        // let obj2 = {
+        //     name:"xiaohong",
+        //     age:17
+        // }
+        // let obj3 = obj1;//把内存地址给了3
+        // console.log(obj1 === obj2);
 
 
 

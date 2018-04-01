@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./jquery-3.3.1.js"></script>
+    <script>
+        // function* helloWorldGenerator(){//此函数有3个状态
+        //     yield 'hello';  //产出
+        //     console.log(123);
+        //     yield 'world';  //yield表示暂停的标志
+        //     return 'ending';
+        // }
+        //  var hw = helloWorldGenerator();
+        // for(let item of hw){
+        //     console.log(item);//，返回指向内部状态的只针对象，遍历器对象
+        // }
+
+
+        // var hw = helloWorldGenerator();
+        // console.log(hw.next());//{value: "hello", done: false}   done是否完成
+        // console.log(hw.next());
+        // console.log(hw.next());
+        // console.log(hw.next());
+
+
+            // function* foo(){
+            //     yield console.log(1);//产出
+            //     yield console.log(2);
+            //     return console.log(3);
+            // }
+            // let a = foo();
+            // console.log(a.next());
+            // // a.next();//需要手动控制输出
+
+            // function* foo(x){
+            //     var y = 2 * (yield(x+1));
+            //     var z = yield (y/3);
+            //     // console.log(y);
+            //     return (x+y+z);
+            // }
+            // var a = foo(5);
+            
+            // a.next();   //6
+            // a.next();   //nan 
+            // a.next();   //nan
+
+            // console.log(a.next());  //6
+            // console.log(a.next(12));    //8   y24  z13
+            // console.log(a.next(13));    //42(5 24 13)
+
+
+            function runAjax(url){
+                $.get(url,{},function(ref){
+                    console.log(ref);
+                    a.next(ref);
+                    console.log(a.next(ref));
+                },'json')
+            }
+            function* foo(){
+                yield runAjax('a.json');
+                yield runAjax('b.json');
+                return runAjax('c.json');
+            }
+            let a = foo();
+            a.next();
+
+
+
+    </script>
+</body>
+</html>
