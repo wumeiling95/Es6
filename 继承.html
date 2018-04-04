@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function A(){
+            this.name = 'zhangsan'
+        }
+       
+        A.prototype.say=function(){
+            console.log('hello');
+        }
+        function B(){
+            A.call(this);//调用A方法，并且将this指向B
+            console.log(this);
+        }
+        B.prototype =new A();
+        var ob =new B();//里面有name了，继承了属性
+        B.prototype.constructor=B;
+    
+        // B.prototype = new A();
+        // //属性：上一句等同于 B.prototype.name='zhangsan';
+        // var oBj1 =new B();
+        // var oBj2=new B();
+        // B.prototype.constructor=B;
+        // console.log(oBj1.constructor);//prototype是一个属性，constructor是prototype下面的对象
+
+    </script>
+</body>
+</html>
